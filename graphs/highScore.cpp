@@ -47,10 +47,12 @@ void solve()
     dfs(1, visFromSource, adjFromSource);
     dfs(n, visFromDest, adjFromDest);
 
-    // for(auto it: dist) 
+    // for(auto it: dist)
     //     cout << it << "  ";
     // cout << endl;
 
+    // USING BELLMAN-FORD ALGO TO FIND THE SHORTEST DISTANCE BETWEEN TWO NODES
+    // GIVEN THERE ARE NEGATIVE EDGES AND NEGATIVE WEIGHT CYCLES
     dist[1] = 0;
     bool flag = 0;
     for (int i = 0; i < n; i++)
@@ -67,13 +69,13 @@ void solve()
             }
         }
 
-        if(!flag)
+        if (!flag)
             break;
     }
 
-    if(flag) 
+    if (flag)
         cout << -1 << endl;
-    else 
+    else
         cout << -dist[n] << endl;
 }
 
